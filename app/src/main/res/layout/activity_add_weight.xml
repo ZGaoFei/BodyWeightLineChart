@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="15dp"
+    android:orientation="vertical"
+    tools:context=".activity.AddWeightActivity">
+
+    <TextView
+        android:id="@+id/tv_weight_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="体重值:" />
+
+    <EditText
+        android:id="@+id/et_weight_value"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="体重值"
+        app:layout_constraintTop_toBottomOf="@+id/tv_weight_title" />
+
+    <TextView
+        android:id="@+id/tv_weight_kg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="KG"
+        app:layout_constraintBottom_toBottomOf="@+id/et_weight_value"
+        app:layout_constraintLeft_toRightOf="@+id/et_weight_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_weight_title" />
+
+    <TextView
+        android:id="@+id/tv_weight_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="时间："
+        app:layout_constraintTop_toBottomOf="@+id/et_weight_value" />
+
+    <EditText
+        android:id="@+id/et_time_value"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="190101"
+        app:layout_constraintTop_toBottomOf="@+id/tv_weight_time" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="时间"
+        app:layout_constraintBottom_toBottomOf="@+id/et_time_value"
+        app:layout_constraintLeft_toRightOf="@+id/et_time_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_weight_time" />
+
+    <Button
+        android:id="@+id/bt_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="添加"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/bt_show"
+        app:layout_constraintTop_toBottomOf="@+id/et_time_value" />
+
+    <Button
+        android:id="@+id/bt_show"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="打开体重表"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/bt_add"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_time_value" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rl_weight"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_add" />
+
+</android.support.constraint.ConstraintLayout>
