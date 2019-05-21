@@ -46,4 +46,11 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/iv_item_delete"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/delete"/>
+
 </LinearLayout>

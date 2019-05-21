@@ -52,6 +52,19 @@ public class SpHelper {
         return mSp.contains(key);
     }
 
+    public void delete(String key) {
+        if (TextUtils.isEmpty(key)) {
+            return;
+        }
+        if (mSp.contains(key)) {
+            mSp.edit().remove(key).apply();
+        }
+    }
+
+    public void deleteAll() {
+        mSp.edit().clear();
+    }
+
     public List<WeightModel> getAll() {
         List<WeightModel> list = new ArrayList<>();
 

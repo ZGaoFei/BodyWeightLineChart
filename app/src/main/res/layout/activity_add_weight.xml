@@ -14,6 +14,8 @@
         android:id="@+id/tv_weight_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:text="体重值:" />
 
     <EditText
@@ -21,6 +23,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:hint="体重值"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_weight_title" />
 
     <TextView
@@ -39,23 +42,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="时间："
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_weight_value" />
 
-    <EditText
-        android:id="@+id/et_time_value"
+    <TextView
+        android:id="@+id/tv_time_value"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:hint="190101"
-        app:layout_constraintTop_toBottomOf="@+id/tv_weight_time" />
-
-    <TextView
-        android:id="@+id/tv_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:text="时间"
-        app:layout_constraintBottom_toBottomOf="@+id/et_time_value"
-        app:layout_constraintLeft_toRightOf="@+id/et_time_value"
+        android:text="请选择时间"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_weight_time" />
 
     <Button
@@ -67,7 +65,7 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/bt_show"
-        app:layout_constraintTop_toBottomOf="@+id/et_time_value" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_time_value" />
 
     <Button
         android:id="@+id/bt_show"
@@ -78,7 +76,7 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/bt_add"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_time_value" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_time_value" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rl_weight"

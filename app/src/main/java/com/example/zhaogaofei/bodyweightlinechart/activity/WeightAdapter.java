@@ -9,10 +9,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.zhaogaofei.bodyweightlinechart.R;
 import com.example.zhaogaofei.bodyweightlinechart.model.WeightModel;
+import com.example.zhaogaofei.bodyweightlinechart.utils.SpHelper;
 
 public class WeightAdapter extends RecyclerView.Adapter<WeightAdapter.WeightHolder> {
     private Context mContext;
@@ -59,9 +61,18 @@ public class WeightAdapter extends RecyclerView.Adapter<WeightAdapter.WeightHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull WeightHolder weightHolder, int i) {
-        weightHolder.tvWeight.setText(mList.get(i).getWeight());
-        weightHolder.tvTime.setText(mList.get(i).getTime());
+    public void onBindViewHolder(@NonNull WeightHolder weightHolder, final int i) {
+        final WeightModel weightModel = mList.get(i);
+        weightHolder.tvWeight.setText(weightModel.getWeight());
+        weightHolder.tvTime.setText(weightModel.getTime());
+        weightHolder.ivDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mList.remove(i);
+                SpHelper.getInstance().delete(weightModel.getTime());
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
@@ -73,12 +84,14 @@ public class WeightAdapter extends RecyclerView.Adapter<WeightAdapter.WeightHold
 
         private TextView tvTime;
         private TextView tvWeight;
+        private ImageView ivDelete;
 
         public WeightHolder(@NonNull View itemView) {
             super(itemView);
 
             tvTime = itemView.findViewById(R.id.tv_item_time);
             tvWeight = itemView.findViewById(R.id.tv_item_weight);
+            ivDelete = itemView.findViewById(R.id.iv_item_delete);
         }
     }
 }
