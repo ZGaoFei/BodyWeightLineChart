@@ -19,4 +19,11 @@
         android:layout_height="wrap_content"
         android:text="查看体重表"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="如果是第一次使用，请先添加体重值再查看体重表"/>
+
 </LinearLayout>

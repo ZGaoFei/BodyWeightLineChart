@@ -86,7 +86,13 @@ public class AddWeightActivity extends AppCompatActivity implements View.OnClick
                 } else {
                     monthStr = String.valueOf(month);
                 }
-                String time = "" + year + monthStr + dayOfMonth;
+                String dayStr;
+                if (dayOfMonth < 10) {
+                    dayStr = "0" + dayOfMonth;
+                } else {
+                    dayStr = String.valueOf(dayOfMonth);
+                }
+                String time = "" + year + monthStr + dayStr;
                 mTvTime.setText(time);
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
